@@ -33,7 +33,11 @@ namespace day4p1
                         {
                             if (arr[i].Length == arr[k].Length)
                             {
-                                if (arr[i] == arr[k] || getCharSum(arr[i]) == getCharSum(arr[k]))
+                                char[] str1 = arr[i].ToCharArray();
+                                Array.Sort(str1);
+                                char[] str2 = arr[k].ToCharArray();
+                                Array.Sort(str2);
+                                if (new string(str1) == new string(str2))
                                 {
                                     n = true;
                                     break;
